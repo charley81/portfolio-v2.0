@@ -3,8 +3,8 @@
 > Current work in progress
 
 ## TODO:
-- [] host on github
-- [] deploy CI/CD (vercel)
+- [x] host on github
+- [x] deploy CI/CD (vercel)
 - [] add analytics (posthog)
 - [] setup unit testing  (jest & react testing library)
 - [] install shadcn 
