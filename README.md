@@ -18,3 +18,4 @@
 - [] project details page (case study)
 - [] contact section
 - [] contact form (react email, resend with server action)
+- [] setup toast notification for contact (shadcn )
