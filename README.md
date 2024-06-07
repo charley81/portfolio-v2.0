@@ -10,7 +10,7 @@
 - [] install shadcn 
 - [] setup shadcn template 
 - [] light/dark mode
-- [] navigation desktop
+- [] navigation desktop (add scroll feature show current section/active link)
 - [] navigation mobile (shadcn)
 - [] landing section
 - [] about section
