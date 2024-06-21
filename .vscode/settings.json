@@ -1,7 +1,10 @@
 {
   "cSpell.ignoreWords": [
     "chrisharley",
+    "clsx",
+    "lucide",
     "posthog",
-    "shadcn"
+    "shadcn",
+    "tailwindcss"
   ]
 }

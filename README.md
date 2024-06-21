@@ -3,12 +3,14 @@
 > Current work in progress
 
 ## TODO:
+
 - [x] host on github
 - [x] deploy CI/CD (vercel)
-- [] add analytics (posthog)
-- [] setup unit testing  (jest & react testing library)
-- [] install shadcn 
-- [] setup shadcn template 
+- [x] use turbo pack
+- [x] add analytics (posthog)
+- [x] install shadcn
+- [x] setup shadcn theme
+- [] setup unit testing (jest & react testing library)
 - [] light/dark mode
 - [] navigation desktop (add scroll feature show current section/active link)
 - [] navigation mobile (shadcn)
