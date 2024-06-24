@@ -6,5 +6,6 @@
     "posthog",
     "shadcn",
     "tailwindcss"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
