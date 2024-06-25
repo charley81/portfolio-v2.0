@@ -5,7 +5,8 @@
     "lucide",
     "posthog",
     "shadcn",
-    "tailwindcss"
+    "tailwindcss",
+    "vaul"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
