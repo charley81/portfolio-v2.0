@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button'
 export default function Home() {
   const currentYear = new Date().getFullYear()
   return (
-    <div className="mt-40">
-      <h1 className="text-4xl">Home Page</h1>
+    <div className="mt-40 mx-auto md:max-w-[768px] lg:max-w-[1024px]">
+      <h1 className="text-4xl ">Home Page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi autem
         voluptatum impedit temporibus laudantium, ratione fugit! Obcaecati error
