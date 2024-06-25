@@ -10,10 +10,14 @@
 - [x] add analytics (posthog)
 - [x] install shadcn
 - [x] setup shadcn theme
-- [] setup unit testing (jest & react testing library)
-- [] light/dark mode
+- [x] setup unit testing (jest & react testing library)
+- [x] setup e2e testing (cypress)
+- [x] change favicon
+- [x] upload images to cdn
+- [] setup framer motion
 - [] navigation desktop (add scroll feature show current section/active link)
 - [] navigation mobile (shadcn)
+- [] light/dark mode
 - [] landing section
 - [] about section
 - [] projects section
