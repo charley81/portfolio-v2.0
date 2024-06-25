@@ -5,10 +5,7 @@ export default function Home() {
   const currentYear = new Date().getFullYear()
   return (
     <div>
-      <h1>Home</h1>
-      <Button>
-        <Link href="/about">About</Link>
-      </Button>
+      <h1 className="text-4xl">Home Page</h1>
     </div>
   )
 }
