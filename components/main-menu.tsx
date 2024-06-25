@@ -5,6 +5,7 @@ import useMediaQuery from '../lib/hooks'
 import { Drawer, DrawerTrigger, DrawerContent } from './ui/drawer'
 import { mainMenuLinks } from '../lib/links'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function MainMenu() {
   const isDesktop = useMediaQuery('(min-width: 1024px)')
@@ -12,7 +13,7 @@ export default function MainMenu() {
   return (
     <header className="z-[900] relative">
       <motion.div
-        className="fixed top-0 w-full h-[5rem] bg-background opacity-80 backdrop-blur-[0.5rem]"
+        className="fixed top-0 left-0 w-full h-[5rem] bg-background opacity-80 backdrop-blur-[0.5rem]"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
@@ -21,8 +22,18 @@ export default function MainMenu() {
 
           {isDesktop ? (
             <ul className="flex gap-4">
-              {mainMenuLinks.map((link, index) => (
-                <li key={link.label}>{link.label}</li>
+              {mainMenuLinks.map((link) => (
+                <motion.li
+                  key={link.label}
+                  className="cursor-pointer hover:text-muted-foreground transition"
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{
+                    y: 0,
+                    opacity: 1
+                  }}
+                >
+                  <Link href={link.section}>{link.label}</Link>
+                </motion.li>
               ))}
             </ul>
           ) : (
@@ -33,8 +44,11 @@ export default function MainMenu() {
               <DrawerContent>
                 <ul className="p-4">
                   {mainMenuLinks.map((link, index) => (
-                    <li key={link.label} className="pb-4">
-                      {link.label}
+                    <li
+                      key={link.section}
+                      className="pb-4 cursor-pointer hover:text-muted-foreground transition "
+                    >
+                      <Link href={link.section}>{link.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -46,88 +60,3 @@ export default function MainMenu() {
     </header>
   )
 }
-
-// return (
-//   <header className="z-[999] relative">
-//     <nav className="flex justify-between w-full">
-//       <h3>Chris Harley</h3>
-
-//       {isDesktop ? (
-//         <ul className="flex gap-4">
-//           {mainMenuLinks.map((link, index) => (
-//             <li key={link.label}>{link.label}</li>
-//           ))}
-//         </ul>
-//       ) : (
-//         <Drawer direction="right">
-//           <DrawerTrigger>
-//             <MenuIcon />
-//           </DrawerTrigger>
-//           <DrawerContent>
-//             <ul>
-//               {mainMenuLinks.map((link, index) => (
-//                 <li key={link.label}>{link.label}</li>
-//               ))}
-//             </ul>
-//           </DrawerContent>
-//         </Drawer>
-//       )}
-//     </nav>
-//   </header>
-// )
-
-{
-  /* <header>
-{isDesktop ? (
-  <nav>
-    <h3>Chris Harley</h3>
-    <ul>
-      {mainMenuLinks.map((link) => (
-        <li key={link.label}>{link.label}</li>
-      ))}
-    </ul>
-  </nav>
-) : (
-  <nav>
-    <h3>Chris Harley</h3>
-    <Drawer direction="right">
-      <DrawerTrigger>
-        <MenuIcon />
-      </DrawerTrigger>
-      <DrawerContent>
-        <ul>
-          {mainMenuLinks.map((link, index) => (
-            <li key={link.label}>{link.label}</li>
-          ))}
-        </ul>
-      </DrawerContent>
-    </Drawer>
-  </nav>
-)}
-</header> */
-}
-
-// <nav className="flex justify-between w-full">
-//   <h3>Chris Harley</h3>
-
-//   {isDesktop ? (
-//     <ul className="flex gap-4">
-//       {mainMenuLinks.map((link, index) => (
-//         <li key={link.label}>{link.label}</li>
-//       ))}
-//     </ul>
-//   ) : (
-//     <Drawer direction="right">
-//       <DrawerTrigger>
-//         <MenuIcon />
-//       </DrawerTrigger>
-//       <DrawerContent>
-//         <ul>
-//           {mainMenuLinks.map((link, index) => (
-//             <li key={link.label}>{link.label}</li>
-//           ))}
-//         </ul>
-//       </DrawerContent>
-//     </Drawer>
-//   )}
-// </nav>

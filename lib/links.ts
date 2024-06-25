@@ -1,18 +1,20 @@
+import { House, Info, Mail, PanelTop } from 'lucide-react'
+
 export const mainMenuLinks = [
   {
     label: 'Home',
-    href: '/home'
+    section: '#home'
   },
   {
     label: 'About',
-    href: '/about'
+    section: '#about'
   },
   {
     label: 'Projects',
-    href: '/projects'
+    section: '#projects'
   },
   {
     label: 'Contact',
-    href: '/contact'
+    section: '#contact'
   }
 ]
