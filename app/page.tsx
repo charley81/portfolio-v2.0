@@ -10,6 +10,8 @@ export default function Home() {
     >
       <Intro />
       <About />
+      <h3 id="projects">Projects</h3>
+      <h3 id="contact"></h3>
     </div>
   )
 }

@@ -13,6 +13,7 @@ export default function Intro() {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: 'tween', duration: 0.2 }}
+        id="intro"
       >
         <Image
           src="https://utfs.io/f/2ffde9f0-d2b4-42d4-bd4b-32342983bc80-rbakq.png"

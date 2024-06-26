@@ -10,6 +10,7 @@ export default function About() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
+      id="about"
     >
       <SectionHeading>About</SectionHeading>
       <div className="mt-8 text-muted-foreground flex flex-col gap-8 md:text-center md:max-w-[768px] lg:max-w-[1024px]">
