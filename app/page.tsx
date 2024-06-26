@@ -1,3 +1,4 @@
+import About from '@/components/sections/about'
 import Intro from '@/components/sections/intro'
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       style={{ marginTop: `${marginTop}px` }}
     >
       <Intro />
+      <About />
     </div>
   )
 }

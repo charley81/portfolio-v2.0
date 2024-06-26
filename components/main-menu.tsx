@@ -40,7 +40,7 @@ export default function MainMenu() {
           ) : (
             <Drawer direction="right">
               <DrawerTrigger>
-                <MenuIcon />
+                <MenuIcon aria-label="Menu Icon" />
               </DrawerTrigger>
               <DrawerContent>
                 <ul className="p-4">
