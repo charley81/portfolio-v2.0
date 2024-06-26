@@ -20,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <CSPostHogProvider>
-        <body className={`${inter.className} bg-background text-foreground`}>
+        <body
+          className={`${inter.className} bg-background text-foreground`}
+          suppressHydrationWarning
+        >
           <MainMenu />
           {children}
         </body>

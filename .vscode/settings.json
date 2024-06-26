@@ -1,11 +1,13 @@
 {
   "cSpell.ignoreWords": [
+    "Berklee",
     "chrisharley",
     "clsx",
     "lucide",
     "posthog",
     "shadcn",
     "tailwindcss",
+    "utfs",
     "vaul"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"

@@ -6,6 +6,7 @@ import { Drawer, DrawerTrigger, DrawerContent } from './ui/drawer'
 import { mainMenuLinks } from '../lib/links'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { Button } from './ui/button'
 
 export default function MainMenu() {
   const isDesktop = useMediaQuery('(min-width: 1024px)')
@@ -13,12 +14,12 @@ export default function MainMenu() {
   return (
     <header className="z-[900] relative">
       <motion.div
-        className="fixed top-0 left-0 w-full h-[5rem] bg-background opacity-80 backdrop-blur-[0.5rem]"
+        className="fixed top-0 left-0 w-full bg-background opacity-80 backdrop-blur-[0.5rem]"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <nav className="flex justify-between items-center mx-auto h-[5rem] w-full px-2 pt-8 md:max-w-[768px] lg:max-w-[1024px]">
-          <h3>Chris Harley</h3>
+        <nav className="flex justify-between items-center mx-auto w-full px-2 pt-8 md:max-w-[768px] lg:max-w-[1024px]">
+          <h3 className="font-bold">Chris Harley</h3>
 
           {isDesktop ? (
             <ul className="flex gap-4">
@@ -39,7 +40,7 @@ export default function MainMenu() {
           ) : (
             <Drawer direction="right">
               <DrawerTrigger>
-                <MenuIcon />
+                <MenuIcon aria-label="Menu Icon" />
               </DrawerTrigger>
               <DrawerContent>
                 <ul className="p-4">
