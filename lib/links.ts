@@ -17,4 +17,4 @@ export const mainMenuLinks = [
     label: 'Contact',
     section: '#contact'
   }
-]
+] as const

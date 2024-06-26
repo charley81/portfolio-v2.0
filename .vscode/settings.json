@@ -6,6 +6,7 @@
     "posthog",
     "shadcn",
     "tailwindcss",
+    "utfs",
     "vaul"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
