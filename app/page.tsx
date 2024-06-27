@@ -1,5 +1,6 @@
 import About from '@/components/sections/about'
 import Intro from '@/components/sections/intro'
+import Projects from '@/components/sections/projects'
 
 export default function Home() {
   const marginTop = 64 + 5 * 16
@@ -10,6 +11,7 @@ export default function Home() {
     >
       <Intro />
       <About />
+      <Projects />
     </div>
   )
 }
