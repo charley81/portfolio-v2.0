@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function Intro() {
   return (
-    <section className="mx-auto max-w-4xl p-4 md:max-w-[768px]">
+    <section className="mx-auto sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1024px]">
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}

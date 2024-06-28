@@ -8,6 +8,7 @@
     "shadcn",
     "tailwindcss",
     "utfs",
+    "uuidv",
     "vaul"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
