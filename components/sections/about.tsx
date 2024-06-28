@@ -12,7 +12,7 @@ export default function About() {
       transition={{ delay: 0.175 }}
     >
       <SectionHeading>About</SectionHeading>
-      <div className="mt-8 text-muted-foreground flex flex-col gap-8 md:text-center md:max-w-[768px] lg:max-w-[1024px]">
+      <div className="mt-8 text-muted-foreground flex flex-col gap-8 md:text-center sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1024px]">
         <p>
           Chris Harley is a skilled UX engineer with over five years of
           experience in designing user-centered digital solutions. He

@@ -6,7 +6,7 @@ export default function Home() {
   const marginTop = 64 + 5 * 16
   return (
     <div
-      className="mx-auto md:max-w-[768px] lg:max-w-[1024px]"
+      className="mx-auto sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1024px]"
       style={{ marginTop: `${marginTop}px` }}
     >
       <Intro />
