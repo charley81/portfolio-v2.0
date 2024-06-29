@@ -18,7 +18,7 @@ export default function MainMenu() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <nav className="flex justify-between items-center mx-auto w-full px-2 pt-8 sm:max-w-[628px] md:max-w-[728px] lg:max-w-[900px]">
+        <nav className="flex justify-between items-center mx-auto w-full px-2 pt-8 sm:max-w-[628px] md:max-w-[728px]">
           <h3 className="font-bold text-xl">Chris Harley</h3>
 
           {isDesktop ? (
