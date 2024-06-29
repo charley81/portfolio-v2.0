@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { CSPostHogProvider } from './providers'
 import MainMenu from '@/components/shared/main-menu'
 import './globals.css'
+import ActiveSectionContextProvider from '@/context/active-section-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,14 +19,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <CSPostHogProvider>
         <body
           className={`${inter.className} bg-background text-foreground`}
           suppressHydrationWarning
         >
-          <MainMenu />
-          {children}
+          <ActiveSectionContextProvider>
+            <MainMenu />
+            {children}
+          </ActiveSectionContextProvider>
         </body>
       </CSPostHogProvider>
     </html>

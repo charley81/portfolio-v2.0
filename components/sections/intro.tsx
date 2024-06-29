@@ -5,10 +5,16 @@ import { Button } from '../ui/button'
 import { Github, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useSectionInView } from '@/lib/hooks'
 
 export default function Intro() {
+  const { ref } = useSectionInView('Home', 0.5)
+
   return (
-    <section className="mx-auto px-4 sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1024px] scroll-mt-6">
+    <section
+      ref={ref}
+      className="mx-auto px-4 lg:max-w-[728px] scroll-mt-[100rem]"
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -27,12 +33,12 @@ export default function Intro() {
       </motion.div>
 
       <motion.p
-        className="text-center mt-4 text-muted-foreground leading-6 py-4"
+        className="text-center mt-4 text-muted-foreground leading-8 py-4"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
         Hey, I’m Chris. I’m a UX Engineer with over 5 years experience focused
-        on building beautiful interfaces & experiences My focus is Figma &
+        on building beautiful interfaces & experiences. My focus is Figma &
         React.
       </motion.p>
 

@@ -1,6 +1,12 @@
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { useActiveSectionContext } from '@/context/active-section-context'
 import * as React from 'react'
+import type { SectionName } from './types'
 
-export default function useMediaQuery(query: string) {
+// media query hook from Shadcn
+// https://github.com/shadcn-ui/ui/blob/main/apps/www/hooks/use-media-query.tsx
+export function useMediaQuery(query: string) {
   const [value, setValue] = React.useState(false)
 
   React.useEffect(() => {
@@ -16,4 +22,21 @@ export default function useMediaQuery(query: string) {
   }, [query])
 
   return value
+}
+
+export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext()
+  const { ref, inView } = useInView({
+    threshold
+  })
+
+  useEffect(() => {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
+      setActiveSection(sectionName)
+    }
+  }, [inView, setActiveSection, timeOfLastClick, sectionName])
+
+  return {
+    ref
+  }
 }

@@ -48,7 +48,7 @@ export default function ProjectCard({
       "
       >
         <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="py-8 text-muted-foreground leading-6">{description}</p>
+        <p className="py-8 text-muted-foreground leading-8">{description}</p>
         <ul className="text-sm font-semibold flex justify-between text-muted-foreground pr-4">
           {tags.map((tag) => (
             <li key={tag}>{tag}</li>
@@ -69,8 +69,8 @@ export default function ProjectCard({
             </li>
           </ul>
 
-          <Button variant="ghost" asChild className="text-primary">
-            <Link href={`/${title}`}>View Case Study</Link>
+          <Button variant="ghost" size="sm" asChild className="text-primary">
+            <Link href={`/${title}`}>VIEW CASE STUDY</Link>
           </Button>
         </footer>
       </div>

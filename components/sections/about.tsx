@@ -2,10 +2,14 @@
 
 import { motion } from 'framer-motion'
 import SectionHeading from '../shared/section-heading'
+import { useSectionInView } from '@/lib/hooks'
 
 export default function About() {
+  const { ref } = useSectionInView('Home')
+
   return (
     <motion.section
+      ref={ref}
       className="mt-40 p-4 mx-auto  max-w-4xl scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
@@ -13,7 +17,10 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About</SectionHeading>
-      <div className="mt-8 text-muted-foreground flex flex-col gap-8 md:text-center sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1024px]">
+      <div
+        className="mt-8 text-muted-foreground flex flex-col 
+      gap-8 md:text-center mx-auto lg:max-w-[728px] leading-8"
+      >
         <p>
           Chris Harley is a skilled UX engineer with over five years of
           experience in designing user-centered digital solutions. He
