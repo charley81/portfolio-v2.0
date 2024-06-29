@@ -24,17 +24,17 @@ export function useMediaQuery(query: string) {
   return value
 }
 
-export function useSectionInView(sectionName: SectionName) {
+export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext()
   const { ref, inView } = useInView({
-    threshold: 0.5
+    threshold
   })
 
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection(sectionName)
     }
-  }, [inView, setActiveSection, timeOfLastClick])
+  }, [inView, setActiveSection, timeOfLastClick, sectionName])
 
   return {
     ref
