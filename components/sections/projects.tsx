@@ -8,16 +8,16 @@ import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 export default function Projects() {
-  const { setActiveSection } = useActiveSectionContext()
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext()
   const { ref, inView } = useInView({
     threshold: 0.5
   })
 
   useEffect(() => {
-    if (inView) {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection('Projects')
     }
-  }, [inView, setActiveSection])
+  }, [inView, setActiveSection, timeOfLastClick])
   return (
     <section ref={ref} className="mt-40 p-4 scroll-mt-28" id="projects">
       <SectionHeading>Projects</SectionHeading>

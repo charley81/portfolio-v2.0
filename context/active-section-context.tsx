@@ -1,9 +1,13 @@
 'use client'
 
-import React, { useState, createContext, useContext } from 'react'
-import { mainMenuLinks } from '@/lib/links'
-
-type SectionName = (typeof mainMenuLinks)[number]['label']
+import React, {
+  useState,
+  createContext,
+  useContext,
+  Dispatch,
+  SetStateAction
+} from 'react'
+import type { SectionName } from '@/lib/types'
 
 type ActiveSectionContextProviderProps = {
   children: React.ReactNode
@@ -11,7 +15,9 @@ type ActiveSectionContextProviderProps = {
 
 type ActiveSectionContextType = {
   activeSection: SectionName
-  setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>
+  setActiveSection: Dispatch<SetStateAction<SectionName>>
+  timeOfLastClick: number
+  setTimeOfLastClick: Dispatch<SetStateAction<number>>
 }
 
 export const ActiveSectionContext =
@@ -21,9 +27,17 @@ export default function ActiveSectionContextProvider({
   children
 }: ActiveSectionContextProviderProps) {
   const [activeSection, setActiveSection] = useState<SectionName>('Home')
+  const [timeOfLastClick, setTimeOfLastClick] = useState(0) // used to temporarily disable section highlighting after a click
 
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        timeOfLastClick,
+        setTimeOfLastClick
+      }}
+    >
       {children}
     </ActiveSectionContext.Provider>
   )

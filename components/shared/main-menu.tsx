@@ -2,7 +2,7 @@
 
 import { useActiveSectionContext } from '@/context/active-section-context'
 import { MenuIcon } from 'lucide-react'
-import useMediaQuery from '../../lib/hooks'
+import { useMediaQuery } from '../../lib/hooks'
 import { Drawer, DrawerTrigger, DrawerContent } from '../ui/drawer'
 import { mainMenuLinks } from '../../lib/links'
 import { motion } from 'framer-motion'
@@ -10,7 +10,8 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 export default function MainMenu() {
-  const { activeSection, setActiveSection } = useActiveSectionContext()
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext()
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
   return (
@@ -41,7 +42,10 @@ export default function MainMenu() {
                     y: 0,
                     opacity: 1
                   }}
-                  onClick={() => setActiveSection(link.label)}
+                  onClick={() => {
+                    setActiveSection(link.label)
+                    setTimeOfLastClick(Date.now())
+                  }}
                 >
                   <Link href={link.section}>
                     {link.label}

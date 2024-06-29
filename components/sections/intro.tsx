@@ -1,25 +1,15 @@
 'use client'
 
-import { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer'
-import { useActiveSectionContext } from '@/context/active-section-context'
 import Image from 'next/image'
 import { Button } from '../ui/button'
 import { Github, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useSectionInView } from '@/lib/hooks'
 
 export default function Intro() {
-  const { setActiveSection } = useActiveSectionContext()
-  const { ref, inView } = useInView({
-    threshold: 0.5
-  })
+  const { ref } = useSectionInView('Home')
 
-  useEffect(() => {
-    if (inView) {
-      setActiveSection('Home')
-    }
-  }, [inView, setActiveSection])
   return (
     <section
       ref={ref}
