@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function Intro() {
   return (
-    <section className="mx-auto px-4 lg:max-w-[728px] scroll-mt-6">
+    <section className="mx-auto px-4 lg:max-w-[728px] scroll-mt-[100rem]">
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -32,7 +32,7 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         Hey, I’m Chris. I’m a UX Engineer with over 5 years experience focused
-        on building beautiful interfaces & experiences My focus is Figma &
+        on building beautiful interfaces & experiences. My focus is Figma &
         React.
       </motion.p>
 
