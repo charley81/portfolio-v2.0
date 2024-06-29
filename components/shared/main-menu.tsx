@@ -6,7 +6,6 @@ import { Drawer, DrawerTrigger, DrawerContent } from '../ui/drawer'
 import { mainMenuLinks } from '../../lib/links'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Button } from '../ui/button'
 
 export default function MainMenu() {
   const isDesktop = useMediaQuery('(min-width: 1024px)')
@@ -18,7 +17,7 @@ export default function MainMenu() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <nav className="flex justify-between items-center mx-auto w-full px-2 pt-8 sm:max-w-[628px] md:max-w-[728px]">
+        <nav className="flex justify-between items-center mx-auto w-full px-2 pt-8 sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1028px]">
           <h3 className="font-bold text-xl">Chris Harley</h3>
 
           {isDesktop ? (
@@ -44,7 +43,7 @@ export default function MainMenu() {
               </DrawerTrigger>
               <DrawerContent>
                 <ul className="p-4">
-                  {mainMenuLinks.map((link, index) => (
+                  {mainMenuLinks.map((link) => (
                     <li
                       key={link.section}
                       className="pb-4 cursor-pointer hover:text-muted-foreground transition "

@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div
-      className="mx-auto sm:max-w-[628px] md:max-w-[728px]"
+      className="mx-auto sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1028px]"
       style={{ marginTop: `${marginTop}px` }}
     >
       <Intro />
