@@ -8,11 +8,12 @@ import Link from 'next/link'
 
 export default function Intro() {
   return (
-    <section className="mx-auto sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1024px]">
+    <section className="mx-auto px-4 sm:max-w-[628px] md:max-w-[728px] lg:max-w-[1024px] scroll-mt-6">
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: 'tween', duration: 0.2 }}
+        id="home"
       >
         <Image
           src="https://utfs.io/f/2ffde9f0-d2b4-42d4-bd4b-32342983bc80-rbakq.png"
