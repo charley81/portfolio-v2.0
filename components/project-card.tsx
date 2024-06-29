@@ -69,8 +69,8 @@ export default function ProjectCard({
             </li>
           </ul>
 
-          <Button variant="ghost" asChild className="text-primary">
-            <Link href={`/${title}`}>View Case Study</Link>
+          <Button variant="ghost" size="sm" asChild className="text-primary">
+            <Link href={`/${title}`}>VIEW CASE STUDY</Link>
           </Button>
         </footer>
       </div>

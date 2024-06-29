@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useActiveSectionContext } from '@/context/active-section-context'
 import { MenuIcon } from 'lucide-react'
 import useMediaQuery from '../../lib/hooks'
 import { Drawer, DrawerTrigger, DrawerContent } from '../ui/drawer'
@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 export default function MainMenu() {
-  const [activeSection, setActiveSection] = useState('Projects')
+  const { activeSection, setActiveSection } = useActiveSectionContext()
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
   return (

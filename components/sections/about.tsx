@@ -1,11 +1,26 @@
 'use client'
 
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import SectionHeading from '../shared/section-heading'
+import { useInView } from 'react-intersection-observer'
+import { useActiveSectionContext } from '@/context/active-section-context'
 
 export default function About() {
+  const { setActiveSection } = useActiveSectionContext()
+  const { ref, inView } = useInView({
+    threshold: 0.75
+  })
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection('About')
+    }
+  }, [inView, setActiveSection])
+
   return (
     <motion.section
+      ref={ref}
       className="mt-40 p-4 mx-auto  max-w-4xl scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}

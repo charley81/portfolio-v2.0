@@ -1,5 +1,8 @@
 'use client'
 
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { useActiveSectionContext } from '@/context/active-section-context'
 import Image from 'next/image'
 import { Button } from '../ui/button'
 import { Github, Linkedin } from 'lucide-react'
@@ -7,8 +10,21 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 export default function Intro() {
+  const { setActiveSection } = useActiveSectionContext()
+  const { ref, inView } = useInView({
+    threshold: 0.5
+  })
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection('Home')
+    }
+  }, [inView, setActiveSection])
   return (
-    <section className="mx-auto px-4 lg:max-w-[728px] scroll-mt-[100rem]">
+    <section
+      ref={ref}
+      className="mx-auto px-4 lg:max-w-[728px] scroll-mt-[100rem]"
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
