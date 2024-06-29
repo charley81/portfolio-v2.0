@@ -27,7 +27,7 @@ export default function Intro() {
       </motion.div>
 
       <motion.p
-        className="text-center mt-4 text-muted-foreground leading-6"
+        className="text-center mt-4 text-muted-foreground leading-6 py-4"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
