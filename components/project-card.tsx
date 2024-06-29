@@ -79,7 +79,7 @@ export default function ProjectCard({
         alt={title}
         quality={90}
         height={100}
-        width={200}
+        width={800}
         className="hidden lg:block basis-1/2 object-cover"
       />
     </motion.div>
